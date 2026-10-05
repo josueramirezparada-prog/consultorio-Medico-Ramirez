@@ -1,2 +1,309 @@
-# consultorio-Medico-Ramirez
-Consultorio Médico Dr. Ramírez en Chinandega. Medicina general, diabetología, nutrición y ginecología y obstetricia.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Consultorio Médico Dr. Ramírez | Chinandega</title>
+
+  <meta name="description"
+        content="Consultorio Médico Dr. Ramírez en Chinandega. Medicina general, diabetología, nutrición, ginecología y obstetricia.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f9fc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* ENCABEZADO */
+    header {
+      background: linear-gradient(135deg, #0b7285, #087f8c);
+      color: white;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 14px;
+      font-weight: normal;
+      opacity: 0.9;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* PORTADA */
+    .hero {
+      background: linear-gradient(
+        rgba(5, 65, 75, 0.88),
+        rgba(5, 65, 75, 0.88)
+      ),
+      url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1600&q=80");
+
+      background-size: cover;
+      background-position: center;
+
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 50px 20px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #25d366;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #087f8c;
+    }
+
+    .btn-secondary:hover {
+      background: #e6f7fa;
+      transform: translateY(-2px);
+    }
+
+    /* SECCIONES */
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #087f8c;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #64748b;
+    }
+
+    /* SERVICIOS */
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: #f8fafc;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #087f8c;
+      margin-bottom: 10px;
+    }
+
+    /* SOBRE EL CONSULTORIO */
+    .about {
+      background: #eef8fa;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .about-box h3 {
+      color: #087f8c;
+      margin-bottom: 15px;
+      font-size: 25px;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .about-list li {
+      margin-bottom: 12px;
+    }
+
+    /* CONTACTO */
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .contact-card h3 {
+      color: #087f8c;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      margin-bottom: 15px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #334155;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      z-index: 2000;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      background: #073b4c;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      opacity: 0.9;
+    }
+
+    /* CELULAR */
+    @media (max-width: 768px) {
+
+      header {
+        position:
